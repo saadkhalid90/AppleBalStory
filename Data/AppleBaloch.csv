@@ -1,0 +1,29 @@
+District,ProductionArea,ProductionVolume,ProductionPerHectare,PROVINCE,DISTRICT,NEIGHBORS,X,Y,ApplePercArea,ApplePercProd
+Awaran,328,1301,3.966463415,Balochistan,AWARAN,Lasbela-Khuzdar-Gwadar-Kech-Washuk-Panjgur,65.3810707,26.1934286,9.47702976,11.21455047
+Barkhan,1164,5917,5.083333333,Balochistan,BARKHAN,Musakhail-Rajanpur-Dera Ghazi Khan-Kohlu-Loralai,69.6196417,29.9552094,62.61430877,72.96830682
+Bolan,0,0,0,Balochistan,KACHHI,Khuzdar-Kalat-Jhal Magsi-Lehri-Sibi-Quetta-Mastung,67.5353837,29.3423532,0,0
+Chagai,0,0,0,Balochistan,CHAGAI,Nushki-Washuk-Kharan,63.2803671,28.9770178,0,0
+Dera Bughti,0,0,0,Balochistan,DERA BUGTI,Rajanpur-Kashmore-Lehri-Kohlu-Sohbatpur-Nasirabad,69.0488539,28.9479511,0,0
+Gwadar,,,0,Balochistan,GWADAR,Lasbela-Kech-Awaran,63.1204102,25.4024317,0,0
+Harnai,78,275,3.525641026,Balochistan,HARNAI,Kohlu-Sibi-Quetta-Ziarat-Loralai,67.86652098,30.13918878,12.70358306,14.13881748
+Jaffarabad,0,0,0,Balochistan,JAFFARABAD,Kambar-Shahdadkot-Jhal Magsi-Jacobabad-Sohbatpur-Nasirabad,68.0089176,28.2053807,0,0
+Jhal magsi,0,0,0,Balochistan,JHAL MAGSI,Khuzdar-Kambar-Shahdadkot-Jaffarabad-Lehri-Kachhi-Nasirabad,67.5293954,28.4030564,0,0
+Kalat,2012,23719,11.7887674,Balochistan,KALAT,Khuzdar-Kachhi-Nushki-Mastung-Washuk-Kharan,66.5842481,28.890496,40.73699129,58.60620289
+Kharan,0,0,0,Balochistan,KHARAN,Kalat-Nushki-Chaghi-Washuk,65.6046348,28.6954417,0,0
+Khuzdar,837,6391,7.635603345,Balochistan,KHUZDAR,Lasbela-Kalat-Dadu-Kambar-Shahdadkot-Jhal Magsi-Kachhi-Washuk-Awaran,66.6468923,27.4609792,30.4696032,49.07848257
+Killa Abdullah,5617,26072,4.641623643,Balochistan,KILLA ABDULLAH,Quetta-Pishin,66.6866682,30.8144698,64.42991512,79.72357276
+Killa Saifullah,51570,303975,5.894415358,Balochistan,KILLA SAIFULLAH,Pishin-Loralai-Zhob,68.3211891,30.9696964,74.46931408,74.89153385
+Kohlu,71,717,10.09859155,Balochistan,KOHLU,Rajanpur-Lehri-Dera Bugti-Sibi-Harnai-Loralai-Barkhan,68.8413221,29.5889839,38.79781421,71.20158888
+Lasbella,,,0,Balochistan,LASBELA,Khuzdar-Karachi West-Jamshoro-Dadu-Malir-Gwadar-Awaran,66.6494884,25.7954179,0,0
+Loralai,1567,11087,7.075303127,Balochistan,LORALAI,Musakhail-Kohlu-Pishin-Ziarat-Harnai-Killa Saifullah-Zhob-Barkhan,68.9029554,30.306255,14.77465586,26.07785487
+Mastung,4874,64865,13.30837095,Balochistan,MASTUNG,Kalat-Kachhi-Quetta-Nushki,66.7437278,29.7231329,48.46857597,69.85096164
+Musa khail,137,519,3.788321168,Balochistan,MUSA KHEL,Sherani-FR DI Khan-Dera Ghazi Khan-Loralai-Zhob-Barkhan,69.9198172,30.8684459,49.28057554,57.98882682
+Nasirabad,0,0,0,Balochistan,NASIRABAD,Jhal Magsi-Jaffarabad-Lehri-Dera Bugti-Sohbatpur,68.1107536,28.593383,0,0
+Panjgoor,,,0,Balochistan,PANJGUR,Kech-Washuk-Awaran,64.1568136,26.7408869,0.361065907,0.010490611
+Pishin,6992,33095,4.73326659,Balochistan,PISHIN,Quetta-Ziarat-Killa Saifullah-Loralai-Killa Abdullah,67.1480091,30.7343568,39.10952008,37.28761999
+Quetta,1406,12650,8.99715505,Balochistan,QUETTA,Kachhi-Sibi-Pishin-Ziarat-Harnai-Mastung-Killa Abdullah,66.8875729,30.1397525,30.39342845,36.43852978
+Sherani,53,346,6.528301887,Balochistan,SHEERANI,Musakhail-South Waziristan Agency-FR DI Khan-Zhob,69.77458701,31.63802711,23.87387387,28.76142976
+Sibi,0,0,0,Balochistan,SIBI,Lehri-Kachhi-Kohlu-Quetta-Harnai,67.9444515,29.7630773,0,0
+Turbat,0,0,0,Balochistan,KECH,Gwadar-Panjgur-Awaran,63.0459128,25.9995694,0,0
+Zhob,6467,59293,9.168548013,Balochistan,ZHOB,Sherani-Musakhail-South Waziristan Agency-Killa Saifullah-Loralai,69.0234693,31.3707278,52.74447435,63.99468986
+Ziarat,3927,26149,6.6587726,Balochistan,ZIARAT,Quetta-Pishin-Harnai-Loralai,67.8687406,30.3936474,82.39613932,88.77911319
