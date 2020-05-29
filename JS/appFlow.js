@@ -216,7 +216,7 @@ function drawAppFlow(){
 
         });
 
-        makeNestCircLegend(CSSSelect = 'svg', [500, 500], [5, 20, 40], radScale, 'Commission Agents (Percent)');
+        makeNestCircLegend(CSSSelect = 'svg.appleFlow', [500, 500], [5, 20, 40], radScale, 'Commission Agents (Percent)');
 
         // interaction
 
@@ -309,7 +309,7 @@ function drawAppFlow(){
 
     function makeNestCircLegend(CSSSelect = 'svg', transformArray, bubArray, bubScale, legendTitle){
       // appending a legendgroup
-      let legendGroup = d3.select('svg')
+      let legendGroup = d3.select(CSSSelect)
                        .append('g')
                        .classed('legendGroup', true)
                        .attr('transform', `translate(${transformArray[0]}, ${transformArray[1]})`)
@@ -317,8 +317,8 @@ function drawAppFlow(){
       legendGroup.append('text')
                .text(legendTitle)
                .classed('legendTitle', true)
-               .attr('dy', 60)
-               .style('font-size', '12px')
+               .attr('dy', 40)
+               .style('font-size', '10px')
                .style('text-anchor', 'middle')
                .style('fill', 'black')
                .style('font-family', "'Roboto Condensed', sans-serif")
