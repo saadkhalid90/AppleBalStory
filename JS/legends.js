@@ -1,4 +1,4 @@
-function makeNestCircLegend(CSSSelect = 'svg', transformArray, bubArray, bubScale, legendTitle){
+function makeNestCircLegend(CSSSelect = 'svg', transformArray, bubArray, bubScale, legendTitle, col = 'black', dy = 40){
   // appending a legendgroup
   let legendGroup = d3.select(CSSSelect)
                    .append('g')
@@ -8,10 +8,10 @@ function makeNestCircLegend(CSSSelect = 'svg', transformArray, bubArray, bubScal
   const textSelect = legendGroup.append('text')
            //.text(legendTitle)
            .classed('legendTitle', true)
-           .attr('dy', 40)
+           .attr('dy', dy)
            .style('font-size', '9px')
            .style('text-anchor', 'middle')
-           .style('fill', 'black')
+           .style('fill', col)
 
   if (typeof legendTitle == "string"){
     textSelect.text(legendTitle)
@@ -23,7 +23,7 @@ function makeNestCircLegend(CSSSelect = 'svg', transformArray, bubArray, bubScal
             .append('tspan')
             .text(d => d)
             .attr('x', 0)
-            .attr('dy', (d, i) => i == 0 ? `40px` : `${i * 13}px`)
+            .attr('dy', (d, i) => i == 0 ? `${dy}px` : `13px`)
             //.style('text-anchor', 'middle');
   }
 
@@ -41,7 +41,7 @@ function makeNestCircLegend(CSSSelect = 'svg', transformArray, bubArray, bubScal
 
   circGroups.append('circle')
            .attr('r', d => bubScale(d))
-           .style('stroke', 'black')
+           .style('stroke', col)
            .style('fill', 'none')
            .style('stroke-width', '1px');
 
@@ -49,7 +49,7 @@ function makeNestCircLegend(CSSSelect = 'svg', transformArray, bubArray, bubScal
            .text(d => d)
            .attr('dx', radius + legLabelPadding)
            .attr('dy', d => -(bubScale(d) - legLabFontSize/2))
-           .style('fill', 'black')
+           .style('fill', col)
            .style('font-size', `${legLabFontSize}px`)
            .style('font-family', 'Open Sans');
 

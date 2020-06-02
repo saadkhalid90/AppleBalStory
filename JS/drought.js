@@ -69,7 +69,6 @@ function drawDrought(){
         intenseObj[intensity[i].DISTRICT] = intensity[i].Intensity;
       }
 
-      console.log(intenseObj);
       // extracting data from the read in topojson
       let balMap = topojson.feature(balDists, balDists.objects.BalochistanDist).features;
 

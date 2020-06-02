@@ -103,8 +103,6 @@ function drawAppFlow(){
       // let the simulation run
       for (var i = 0; i < 5000; ++i) simulation.tick();
 
-      console.log(CommAgLocs);
-
       // define svg groups to hold map paths
       const pakMapGrp = svg.append('g').attr('class', 'pakMapGrp');
       const appDistMapGrp = svg.append('g').attr('class', 'appDistMapGrp');

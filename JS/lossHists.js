@@ -22,7 +22,7 @@ function drawLossHists(){
     .attr('class', 'y-axis-title')
     .text('Frequency')
     .attr('x', '-100px')
-    .attr('y', '-10px')
+    .attr('y', '-20px')
     .styles({
       'transform': 'rotate(-90deg)',
       'font-family': "'Roboto', sans-serif"
@@ -120,7 +120,7 @@ function drawLossHists(){
 
       if (xAxis == true){
         const axis = svgG.append("g")
-        .attr('class', 'axisBottom')
+        .attr('class', 'axis axisBottom')
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(x));
 
@@ -132,18 +132,14 @@ function drawLossHists(){
               'fill': 'black'
             });
       }
-    }
 
-    // appendHist('id1', binsOverall, lossData.length);
-    // appendHist('id2', binsSmall, lossDataSmall.length);
-    // appendHist('id3', binsMedium, lossDataMedium.length);
-    // appendHist('id4', binsLarge, lossDataLarge.length);
-    //
-    //
-    // appendHist('id5', binsKA, lossDataKA.length);
-    // appendHist('id6', binsKS, lossDataKS.length);
-    // appendHist('id7', binsPishin, lossDataPishin.length);
-    // appendHist('id8', binsQuetta, lossDataQuetta.length);
+      const vertAxis = d3.axisLeft(y).tickValues([0, 35, 70, 105, 140])
+
+      const yaxis = svgG.append("g")
+      .attr('class', 'axis axisLeft')
+      .attr("transform", `translate(2, 0)`)
+      .call(vertAxis);
+    }
 
     const colArr = [
       '#beaed4',

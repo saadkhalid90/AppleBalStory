@@ -2,6 +2,7 @@
 <head>
   <meta charset="utf-8">
   <title>Apple Value Chain</title>
+  <script src="https://unpkg.com/d3-hexgrid"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
   <script src="//d3js.org/topojson.v1.min.js"></script>
@@ -9,10 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet'/>
   <script src="JS/legends.js"></script>
   <script src="JS/voronoi.js"></script>
 </head>
 <style media="screen">
+    body {margin:0}
     .root {
       position: relative;
     }
@@ -23,11 +27,58 @@
       font-weight: 500;
     }
 
+    div.headingContain {
+      text-align: center;
+    }
+
     h3 {
       font-family: 'Roboto', sans-serif;
       font-size: 22px;
       color: #DF4F57;
       font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      color: #DF4F57;
+      font-weight: 400;
+      margin-top: 0px;
+    }
+
+    label.filterLabel {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    select {
+      margin-left: 20px;
+    }
+
+    div.categLegendContain {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    div.legendRow {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    div.checkBoxContain {
+      font-family: 'Roboto', sans-serif;
+      margin-bottom: 20px;
+    }
+
+    label.checkBoxLabel {
+      font-size: 15px;
+    }
+
+    div.textBox {
+      margin-left: 10px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
     }
 
     div.descriptContain {
@@ -128,25 +179,48 @@
       font-size: 16px;
       color: #DF4F57;
     }
-    svg.lossHist g.axisBottom path, line {
+    svg.lossHist g.axis path, line {
       fill: none;
       stroke: none;
 
     }
-    svg.lossHist g.axisBottom {
+    svg.lossHist g.axis {
       font-family: 'Roboto Condensed', sans-serif;
       font-size: 9px;
       font-weight: 300;
     }
 
 
+
     svg.appleFlow text.cityLabel {
       font-weight: 300;
       font-family: 'Roboto Condensed', sans-serif;
     }
+
+    div.mapBoxContain {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    div#mapBox {
+      position:relative;
+      width: 100%;
+      height: 100vh;
+    }
+    svg.mapBoxSVG {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+    }
 </style>
 <body>
   <div class="root">
+    <div class="imgContain">
+      <img width = "300px" src="img/logo PAFAID.svg" alt="">
+    </div>
     <div class="headingContain">
       <h1>The Apples of Balochistan</h1>
     </div>
@@ -164,7 +238,54 @@
       </p>
     </div>
     <div class="headingContain">
-      <h3>Insert Mapbox Grid Viz</h3>
+      <h3>Geographical distribution of Apple Value Chain Actors</h3>
+      <h4>Source: PAFAID Survey</h4>
+    </div>
+    <div class="mapBoxContain">
+      <div class="controls">
+        <div class="selectCategory filterContain">
+          <label class = "filterLabel" for="selectCategory">Choose a Value Chain Actor</label>
+          <select id="selectCategory" name="Select Value Chain actor">
+            <option value="All">All Actors</option>
+            <option value="Farmer">Farmer</option>
+            <option value="Retailer">Retailer</option>
+            <option value="ColdStorage">Cold Storage</option>
+            <option value="Middleman">Middleman</option>
+          </select>
+        </div>
+      </div>
+      <div class="categLegendContain">
+        <div class="legendRow">
+          <div class="colBox" style="width: 20px; height: 12px; background-color: rgba(255, 255, 0, 0.9)"></div>
+          <div class="textBox">Farmers</div>
+        </div>
+        <div class="legendRow">
+          <div class="colBox" style="width: 20px; height: 12px; background-color: rgba(251, 154, 153, 0.9)"></div>
+          <div class="textBox">Middlemen</div>
+        </div>
+        <div class="legendRow">
+          <div class="colBox" style="width: 20px; height: 12px; background-color: rgba(31, 120, 180, 0.9)"></div>
+          <div class="textBox">Cold Storages</div>
+        </div>
+        <div class="legendRow">
+          <div class="colBox" style="width: 20px; height: 12px; background-color: rgba(178, 223, 138, 0.9)"></div>
+          <div class="textBox">Retailers</div>
+        </div>
+      </div>
+      <div class="checkBoxContain">
+        <label class = "filterLabel" for="checkBox">District Filter: </label>
+        <input type="checkbox" name="Killah Abdullah" value="Killah Abdullah">
+        <label class = "checkBoxLabel" for="Killah Abdullah">Killah Abdullah</label>
+        <input type="checkbox" name="Killah Saifullah" value="Killah Saifullah">
+        <label class = "checkBoxLabel" for="Killah Saifullah">Killah Saifullah</label>
+        <input type="checkbox" name="Quetta" value="Quetta">
+        <label class = "checkBoxLabel" for="Quetta">Quetta</label>
+        <input type="checkbox" name="Pishin" value="Pishin">
+        <label class = "checkBoxLabel" for="Pishin">Pishin</label>
+        <input type="checkbox" name="Kalat" value="Kalat">
+        <label class = "checkBoxLabel" for="Kalat">Kalat</label>
+      </div>
+      <div id="mapBox"></div>
     </div>
     <div class="descriptContain">
       <p>
@@ -236,6 +357,7 @@
   <script src="JS/drought.js"></script>
   <script src="JS/lossHists.js"></script>
   <script src="JS/appFlow.js"></script>
+  <script src="JS/mapboxHex.js"></script>
 </body>
 </html>
 <!DOCTYPE html>
