@@ -21,6 +21,8 @@ function drawMBoxHexMap(){
     // appending an svg to that container
     const svg = d3.select(container).append("svg").classed('mapBoxSVG', true);
 
+    d3.select("#mapBox").style("height", window.innerHeight);
+
     // we calculate the scale given mapbox state (derived from viewport-mercator-project's code)
     // to define a d3 projection
     const getD3 = () => {
