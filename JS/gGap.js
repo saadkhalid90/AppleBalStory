@@ -27,16 +27,19 @@ function drawGenderGap(){
 
     svg.append('text')
       .attr('class', 'title')
-      .text('Hourly Wage Gender Gap')
+      .text('Hourly wage gender gap')
       .attrs({
         x: 300,
-        y: 25
+        y: 22
       })
       .styles({
         fill: 'black',
         'text-anchor': 'middle',
         'font-family': "'Roboto', sans-serif",
-        'font-size':  '20px'
+        'font-size':  '22px',
+        'fill': '#DF4F57',
+        'font-weight': 500
+
       });
 
     svg.append('text')
@@ -44,13 +47,14 @@ function drawGenderGap(){
       .text('Top 10 ranked countries (source: ILO 2018-19)')
       .attrs({
         x: 300,
-        y: 45
+        y: 48
       })
       .styles({
         fill: 'black',
         'text-anchor': 'middle',
         'font-family': "'Roboto', sans-serif",
-        'font-size':  '12px'
+        'font-size':  '14px',
+        'fill': '#DF4F57'
       });
 
     const barGrp = svgG.selectAll('g.barGrp')

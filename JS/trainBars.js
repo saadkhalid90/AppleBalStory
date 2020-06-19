@@ -31,10 +31,13 @@ function drawTrainBars(){
 
 
     svg.append('text')
-      .text('Proportion of Apple Farmers who Received Training')
+      .text('Proportion of apple farmers who received training')
       .attr('x', width/2)
       .attr('y', -40)
-      .style('text-anchor', 'middle');
+      .style('text-anchor', 'middle')
+      .style('font-size', '22px')
+      .style('font-weight', 500)
+      .style('fill', '#DF4F57');
 
     const xAxis = svg.append("g")
         .attr("transform", "translate(0," + height + ")")

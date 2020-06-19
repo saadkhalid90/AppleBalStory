@@ -5,6 +5,8 @@ function drawProdSVG(){
         .scale([150 * 22]);
     let appleBal;
 
+    const width = 700;
+
     let path = d3.geoPath().projection(projection);
     let svg = d3.select('svg.appleProdSVG');
 
@@ -62,17 +64,19 @@ function drawProdSVG(){
 
       let title = svg.append('text')
                       .attr('class', 'mainTitle')
-                      .attr('x', 10)
-                      .attr('y', 16)
-                      .text(`Apple production in Balochistan 2016-17`)
-                      .style('font-family', 'Open Sans')
+                      .attr('x', width/2)
+                      .attr('y', 18)
+                      .text(`Apple production in Balochistan (2016-17)`)
+                      .style('font-family', "'Roboto', sans-serif")
+                      .style('text-anchor', 'middle');
 
       let sub_title = svg.append('text')
                       .attr('class', 'subTitle')
-                      .attr('x', 10)
-                      .attr('y', 34)
-                      .text('source: Directorate of Crops Reporting Services, Balochistan')
-                      .style('font-family', 'Open Sans')
+                      .attr('x', width/2)
+                      .attr('y', 45)
+                      .text('Source: Directorate of Crops Reporting Services, Balochistan')
+                      .style('font-family', "'Roboto', sans-serif")
+                      .style('text-anchor', 'middle');
 
       makeNestCircLegend(CSSSelect = 'svg', [593, 600], [15, 40, 80], radScale, 'Percent share of Apple among all fruits', 'produced (in Tonnes)');
       drawContLegend(svg, [10, 100], 5000, '100000 or more', [colScale(5000), colScale(100000)], 'black');

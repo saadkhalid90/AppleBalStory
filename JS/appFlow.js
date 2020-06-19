@@ -62,22 +62,26 @@ function drawAppFlow(){
 
     let title = titlesGrp.append('text')
                     .attr('class', 'mainTitle')
-                    .attr('x', 10)
+                    .attr('x', 300)
                     .attr('y', 16)
-                    .text(`Location of Commission Agents to whom apples are sold`)
+                    .text(`Location of commission agents to whom apples are sold`)
                     .style('font-family', "'Roboto', sans-serif")
-                    .style('font-weight', 400)
-                    .style('font-size', '18px')
+                    .style('font-weight', 500)
+                    .style('font-size', '16.5px')
+                    .style('fill', '#DF4F57')
+                    .style('text-anchor', 'middle');
 
 
     let sub_title = titlesGrp.append('text')
                     .attr('class', 'subTitle')
-                    .attr('x', 10)
-                    .attr('y', 32)
-                    .text('District Quetta, Killa Abdullah, Killah Saifullah, Kalat and Pishin (source: PAFAID survey)')
-                    .style('font-family', "'Roboto Condensed', sans-serif")
-                    .style('font-weight', 300)
-                    .style('font-size', '12px')
+                    .attr('x', 300)
+                    .attr('y', 35)
+                    .text('District Quetta, Killa Abdullah, Killah Saifullah, Kalat and Pishin (Source: PAFAID survey)')
+                    .style('font-family', "'Roboto', sans-serif")
+                    .style('font-weight', 400)
+                    .style('font-size', '10.5px')
+                    .style('fill', '#DF4F57')
+                    .style('text-anchor', 'middle');
 
 
     async function readAndDraw(){

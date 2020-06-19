@@ -28,15 +28,17 @@ function drawLossHists(){
       'font-family': "'Roboto', sans-serif"
     })
 
-  svg.append('text')
+  d3.select('svg.lossHist').append('text')
     .attr('class', 'Title')
-    .text('Distribution of Post-harvest Losses as a Proportion of Produce')
-    .attr('x', '20px')
-    .attr('y', '-60px')
+    .text('Distribution of post-harvest losses as a proportion of produce')
+    .attr('x', '350px')
+    .attr('y', '30px')
     .styles({
-      'text-anchor': 'start',
+      'text-anchor': 'middle',
       'font-family': "'Roboto', sans-serif",
-      'font-size': '16px'
+      'font-size': '21px',
+      'font-weight': 500,
+      'fill': '#DF4F57'
     })
 
   const svg_g = svg

@@ -86,7 +86,7 @@ h3 {
 
 h4 {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   color: #DF4F57;
   font-weight: 400;
   margin-top: 0px;
@@ -189,12 +189,13 @@ svg.appleProdSVG .legendGroup {
   font-family: 'PT Sans Narrow', sans-serif;
 }
 svg.appleProdSVG .mainTitle {
-  font-size: 20px;
-  fill: black;
+  font-size: 25px;
+  fill: #DF4F57;
+  font-weight: 500;
 }
 svg.appleProdSVG .subTitle {
-  font-size: 12px;
-  fill: black;
+  font-size: 16px;
+  fill: #DF4F57;
 }
 
 svg.appTypeSVG {
@@ -206,14 +207,14 @@ svg.appTypeSVG .distLabel {
   font-family: 'Roboto Condensed', sans-serif;
 }
 svg.appTypeSVG .title {
-  font-size: 16px;
-  fill: #212121;
-  font-weight: 400;
+  font-size: 17px;
+  fill: #DF4F57;
+  font-weight: 500;
 }
 svg.appTypeSVG .sub-title {
   font-size: 11px;
-  fill: #424242;
-  font-weight: 300;
+  fill: #DF4F57;
+  font-weight: 400;
 }
 svg.appTypeSVG .legendTitle{
   font-weight: 300;
@@ -300,7 +301,8 @@ svg.barsTrain g.grid path {
 }
 
 .unido_logo_footer {
-  width: 260px;
+  width: 120px;
+  margin: 0px 20px;
 }
 
 .baloch_logo_footer {
@@ -358,7 +360,7 @@ svg.barsTrain g.grid path {
   }
 
   .unido_logo_footer {
-    width: 170px;
+    width: 90px;
   }
 
   .baloch_logo_footer {

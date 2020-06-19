@@ -112,7 +112,7 @@ function drawAppTypes(){
           .attr('class', 'sub-title')
           .text('Across surveyed Tehsils (source: PAFAID survey)')
           .attr('x', 250)
-          .attr('y', 48)
+          .attr('y', 50)
           .style('text-anchor', 'middle');
 
       // append a nested circle legend

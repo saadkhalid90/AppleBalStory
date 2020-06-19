@@ -9,7 +9,7 @@ function drawDrought(){
     let svg = d3.select('svg.droughtSVG');
 
     const title = svg.append('text')
-                    .text('Intensity of Drought across Balochistan (District Level Categorization)')
+                    .text('Intensity of drought across Balochistan')
                     .attrs({
                       class: 'Title',
                       x: 350,
@@ -19,7 +19,9 @@ function drawDrought(){
                       'text-anchor': 'middle',
                       fill: 'black',
                       "font-family": "'Roboto', sans-serif",
-                      'font-size': '20px'
+                      'font-size': '25px',
+                      'font-weight': 500,
+                      'fill': '#DF4F57'
                     });
 
 
@@ -28,13 +30,14 @@ function drawDrought(){
                     .attrs({
                       class: 'Title',
                       x: 350,
-                      y: 50
+                      y: 55
                     })
                     .styles({
                       'text-anchor': 'middle',
                       fill: 'black',
                       "font-family": "'Roboto', sans-serif",
-                      'font-size': '14px'
+                      'font-size': '15px',
+                      'fill': '#DF4F57'
                     })
 
     let colScale = d3.scaleOrdinal()
