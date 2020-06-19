@@ -106,6 +106,7 @@ function drawLossHists(){
             .attr("height", d => height - y(d.length/ denom))
             .style("fill", color);
 
+
       svgG.append('text')
         .attr('y', '8px')
         .attr('x', 115)

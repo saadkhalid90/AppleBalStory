@@ -144,7 +144,7 @@ function drawMBoxHexMap(){
           .style('fill-opacity', 0.6)
           // .style('stroke', '#212121')
           .style('stroke-width', '1px')
-          .style('stroke-opacity', 0.5);
+          .style('stroke-opacity', 0.5)
 
       }
 
