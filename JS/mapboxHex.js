@@ -15,7 +15,6 @@ function drawMBoxHexMap(){
     })
 
     var t1 = performance.now()
-    console.log("Call to function took " + (t1 - t0) + " milliseconds.")
 
     map.scrollZoom.disable() // disable zoom on pinch
     map.addControl(new mapboxgl.NavigationControl()); // add navigation controls like zoom etc
@@ -124,7 +123,6 @@ function drawMBoxHexMap(){
           d.District = d[0] ? d[0].District: null;
         });
 
-        //console.log(hexgrid.grid.layout);
 
         const hexBubs = svg.append('g')
           .selectAll('.hex')

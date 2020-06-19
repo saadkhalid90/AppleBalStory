@@ -1,7 +1,6 @@
 function drawTrainBars(){
   async function readAndDraw(){
     const data = await d3.csv('Data/Training.csv');
-    console.log(data);
 
     const margin = {
       top: 60,
