@@ -86,7 +86,7 @@ function drawProdSVG(){
         const eventX = d3.event.x;
         const eventY = d3.event.y;
 
-        d3.select('div.appleProdContain').append('div')
+        d3.select('body').append('div')
                         .classed('tooltip', true)
                         .html(
                           d =>
@@ -114,7 +114,7 @@ function drawProdSVG(){
 
       svg.selectAll('circle.shareBub').on('mouseout', function(d, i){
 
-        d3.select('div.appleProdContain')
+        d3.select('body')
           .select('div.tooltip')
           .remove();
 

@@ -1,0 +1,413 @@
+body, html {
+  margin: 0px;
+}
+
+.root {
+  position: relative;
+}
+
+.landing_container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('./img/mainBg.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.landing_content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll_down_div {
+  position: absolute;
+  bottom: 0px;
+  width: 200px;
+  height: 40px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  left: calc(50% - 100px);
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  justify-content: center;
+  background: rgba(2,37,5,0.5);
+  color: white;
+}
+
+.scroll_down_div > span {
+  color: #cddc39;
+  margin-left: 5px;
+}
+
+#mapBox {
+  transform: translate3d(0px, 0px, 0px);
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  color: #DF4F57;
+  font-weight: 500;
+}
+
+.titleHeading > h1 {
+  font-family: 'Playfair Display', serif !important;
+  color: white !important;
+  font-weight: 500;
+  font-size: 45px;
+  margin-top: -25px;
+}
+
+.pafaid_logo {
+  width: 300px;
+}
+
+div.headingContain {
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  color: #DF4F57;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #DF4F57;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+label.filterLabel {
+  font-family: 'Roboto', sans-serif;
+}
+
+select {
+  margin-left: 20px;
+}
+
+div.categLegendContain {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+div.legendRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.checkBoxContain {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
+}
+
+label.checkBoxLabel {
+  font-size: 15px;
+}
+
+div.textBox {
+  margin-left: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+}
+
+div.descriptContain {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+div.descriptContain p {
+      color: #212121;
+}
+
+div.sHMapContain {
+  font-family: 'Roboto', sans-serif;
+}
+
+div.descriptContain p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 21%;
+  margin-right: 21%;
+}
+
+g.circLegGroup {
+  font-family: 'Roboto', sans-serif;
+}
+
+g.legendOrdinal {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+}
+
+.legendTitle {
+  font-family: 'Roboto', sans-serif;
+}
+
+span.varName {
+  font-weight: bold;
+}
+
+div.tooltip {
+  text-align: center;
+}
+
+div.tooltip p{
+  margin: 10px 10px 10px 10px;
+}
+
+div.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dataText {
+  color: #DF4F57;
+  font-weight: 500;
+}
+
+svg.appleProdSVG .legendGroup {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+svg.appleProdSVG .mainTitle {
+  font-size: 20px;
+  fill: black;
+}
+svg.appleProdSVG .subTitle {
+  font-size: 12px;
+  fill: black;
+}
+
+svg.appTypeSVG {
+  font-family: 'Roboto', sans-serif;
+}
+svg.appTypeSVG .distLabel {
+  font-size: 11px;
+  font-weight: 300;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+svg.appTypeSVG .title {
+  font-size: 16px;
+  fill: #212121;
+  font-weight: 400;
+}
+svg.appTypeSVG .sub-title {
+  font-size: 11px;
+  fill: #424242;
+  font-weight: 300;
+}
+svg.appTypeSVG .legendTitle{
+  font-weight: 300;
+  font-size: 8px;
+}
+label.chooseLabel {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #DF4F57;
+}
+svg.lossHist g.axis path, line {
+  fill: none;
+  stroke: none;
+
+}
+svg.lossHist g.axis {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+}
+
+
+
+svg.appleFlow text.cityLabel {
+  font-weight: 300;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+div.mapBoxContain {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div#mapBox {
+  position:relative;
+  width: 100%;
+  height: 100vh;
+}
+svg.mapBoxSVG {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+
+.footer {
+  padding: 40px;
+  background: #eee;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pafaid_logo_footer {
+  width: 210px;
+}
+
+.unido_logo_footer {
+  width: 260px;
+}
+
+.baloch_logo_footer {
+  width: 100px;
+}
+
+.footer_content {
+  margin-right: 100px;
+  width: calc(100% - 100px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.share_heading {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.social_buttons {
+  display: flex;
+  align-items: center;
+  width: 240px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 840px) {
+  .pafaid_logo {
+    width: 250px;
+  }
+  .titleHeading > h1 {
+    font-family: 'Playfair Display', serif !important;
+    color: white !important;
+    font-weight: 500;
+    font-size: 40px;
+    margin-top: -25px;
+    padding: 0px 20px;
+  }
+
+  div.descriptContain p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .footer_content {
+    margin-right: 40px;
+    width: calc(100% - 40px);
+  }
+  .pafaid_logo_footer {
+    width: 120px;
+  }
+
+  .unido_logo_footer {
+    width: 170px;
+  }
+
+  .baloch_logo_footer {
+    width: 90px;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .appleFlow, .lossHist {
+    width: 85% !important;
+    margin-left: 7.5%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .appleProdSVG {
+    width: 85% !important;
+    margin-left: 7.5%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .droughtSVG {
+    width: 85% !important;
+    margin-left: 7.5%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .genderGap {
+    width: 85% !important;
+    margin-left: 7.5%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .appTypeSVG, .genderGap, .droughtSVG, .appleProdSVG, .appleFlow, .lossHist  {
+    width: 92% !important;
+    margin-left: 4%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pafaid_logo {
+    width: 200px;
+  }
+  .titleHeading > h1 {
+    font-size: 35px;
+    margin-top: -15px;
+  }
+  div.descriptContain p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer_content {
+    margin-right: 0px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer_content {
+    margin-right: 0px;
+    width: 100%;
+    flex-direction: column;
+  }
+  .unido_logo_footer {
+    margin: 15px 0px;
+  }
+}

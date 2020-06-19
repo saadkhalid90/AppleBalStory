@@ -167,7 +167,7 @@ function drawAppTypes(){
 
 
           if (over){
-            d3.select('div.appTypeContain').append('div')
+            d3.select('body').append('div')
                             .classed('tooltip', true)
                             .html(
                               d =>
@@ -192,7 +192,7 @@ function drawAppTypes(){
           }
 
           else {
-            d3.select('div.appTypeContain').select('div.tooltip').remove();
+            d3.select('body').select('div.tooltip').remove();
           }
 
 

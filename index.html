@@ -2,246 +2,75 @@
 <head>
   <meta charset="utf-8">
   <title>Apple Value Chain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://datastories.pafaid.org/meat-data/img/logo%20PAFAID.svg" />
+
+  <meta property="og:url"           content="https://datastories.pafaid.org/apple-data/" />
+  <meta property="og:type"          content="article" />
+  <meta property="og:title"         content="The Apples of Balochistan" />
+  <meta property="og:description"   content="Apple is one of the major contributors to the agricultural economy of Balochistan province. Apple accounts for 52% of the total fruits produced in the province and its traded value in 2018-19 was recorded to be about 29.4 billion PKR." />
+  <meta property="og:image"         content="https://datastories.pafaid.org/apple-data/img/mainBg.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@UNIDO_Pakistan">
+  <meta name="twitter:title" content="The Apples of Balochistan">
+  <meta name="twitter:image:src" content="https://datastories.pafaid.org/apple-data/img/mainBg.jpg">
+
   <script src="https://unpkg.com/d3-hexgrid"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
   <script src="//d3js.org/topojson.v1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet'/>
   <script src="JS/legends.js"></script>
   <script src="JS/voronoi.js"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+
 </head>
-<style media="screen">
-    body {margin:0}
-    .root {
-      position: relative;
-    }
-    h1 {
-      font-family: 'Roboto', sans-serif;
-      font-size: 32px;
-      color: #DF4F57;
-      font-weight: 500;
-    }
 
-    div.headingContain {
-      text-align: center;
-    }
-
-    h3 {
-      font-family: 'Roboto', sans-serif;
-      font-size: 22px;
-      color: #DF4F57;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-
-    h4 {
-      font-family: 'Roboto', sans-serif;
-      font-size: 16px;
-      color: #DF4F57;
-      font-weight: 400;
-      margin-top: 0px;
-    }
-
-    label.filterLabel {
-      font-family: 'Roboto', sans-serif;
-    }
-
-    select {
-      margin-left: 20px;
-    }
-
-    div.categLegendContain {
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-
-    div.legendRow {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    div.checkBoxContain {
-      font-family: 'Roboto', sans-serif;
-      margin-bottom: 20px;
-    }
-
-    label.checkBoxLabel {
-      font-size: 15px;
-    }
-
-    div.textBox {
-      margin-left: 10px;
-      font-family: 'Roboto', sans-serif;
-      font-size: 13px;
-    }
-
-    div.descriptContain {
-      font-family: 'Roboto', sans-serif;
-      font-size: 16px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      width: 100%;
-    }
-
-    div.descriptContain p {
-          color: #212121;
-    }
-
-    div.sHMapContain {
-      font-family: 'Roboto', sans-serif;
-    }
-
-    div.descriptContain p {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-left: 21%;
-      margin-right: 21%;
-    }
-
-    g.circLegGroup {
-      font-family: 'Roboto', sans-serif;
-    }
-
-    g.legendOrdinal {
-      font-family: 'Roboto', sans-serif;
-      font-size: 11px;
-    }
-
-    .legendTitle {
-      font-family: 'Roboto', sans-serif;
-    }
-
-    span.varName {
-      font-weight: bold;
-    }
-
-    div.tooltip {
-      text-align: center;
-    }
-
-    div.tooltip p{
-      margin: 10px 10px 10px 10px;
-    }
-
-    div.root {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .dataText {
-      color: #DF4F57;
-      font-weight: 500;
-    }
-
-    svg.appleProdSVG .legendGroup {
-      font-family: 'PT Sans Narrow', sans-serif;
-    }
-    svg.appleProdSVG .mainTitle {
-      font-size: 20px;
-      fill: black;
-    }
-    svg.appleProdSVG .subTitle {
-      font-size: 12px;
-      fill: black;
-    }
-
-    svg.appTypeSVG {
-      font-family: 'Roboto', sans-serif;
-    }
-    svg.appTypeSVG .distLabel {
-      font-size: 11px;
-      font-weight: 300;
-      font-family: 'Roboto Condensed', sans-serif;
-    }
-    svg.appTypeSVG .title {
-      font-size: 16px;
-      fill: #212121;
-      font-weight: 400;
-    }
-    svg.appTypeSVG .sub-title {
-      font-size: 11px;
-      fill: #424242;
-      font-weight: 300;
-    }
-    svg.appTypeSVG .legendTitle{
-      font-weight: 300;
-      font-size: 8px;
-    }
-    label.chooseLabel {
-      font-family: 'Roboto', sans-serif;
-      font-size: 16px;
-      color: #DF4F57;
-    }
-    svg.lossHist g.axis path, line {
-      fill: none;
-      stroke: none;
-
-    }
-    svg.lossHist g.axis {
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 9px;
-      font-weight: 300;
-    }
-
-
-
-    svg.appleFlow text.cityLabel {
-      font-weight: 300;
-      font-family: 'Roboto Condensed', sans-serif;
-    }
-
-    div.mapBoxContain {
-      position: relative;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    div#mapBox {
-      position:relative;
-      width: 100%;
-      height: 100vh;
-    }
-    svg.mapBoxSVG {
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-    }
-</style>
 <body>
   <div class="root">
-    <div class="imgContain">
-      <img width = "300px" src="img/logo PAFAID.svg" alt="">
-    </div>
-    <div class="headingContain">
-      <h1>The Apples of Balochistan</h1>
+    <div class="landing_container">
+      <div class="landing_content">
+        <div data-aos="fade" data-aos-offset="50" data-aos-duration="1000" data-aos-delay="150" class="imgContain">
+          <img class="pafaid_logo" src="img/logo PAFAID.svg" alt="">
+        </div>
+        <div data-aos="fade" data-aos-duration="1000" data-aos-delay="450" class="headingContain titleHeading">
+          <h1>The Apples of Balochistan</h1>
+        </div>
+      </div>
+      <div  class="scroll_down_div animate__animated animate__fadeInUp animate__delay-1s"><p>Scroll Down</p><span class="material-icons">arrow_circle_down</span></div>
     </div>
     <div class="descriptContain">
       <p>
         Apple is one of the major contributors to the agricultural economy of Balochistan province.  Apple accounts for <span class="dataText">52%</span> of the total fruits produced in the province and its traded value in 2018-19 was recorded to be about <span class="dataText">29.4 billion</span> PKR.
       </p>
     </div>
-    <div class="appleProdContain">
-      <svg class ="appleProdSVG" width = "600px" viewBox = "0 0 700 700"></svg>
+    <div data-aos="fade" data-aos-duration="750" data-aos-delay="150" class="appleProdContain">
+      <svg class ="appleProdSVG" preserveAspectRatio="xMinYMin meet" width = "600px" viewBox = "0 0 700 700"></svg>
     </div>
     <div class="descriptContain">
       <p>
         There are about <span class="dataText">18,000</span> people working as farmers within the apple value chain in Balochistan. In addition, actors are involved in production through picking, packaging, transport  and selling them to various markets in the country and province. The PAFAID initiative aims to pilot improved practices among value chain actors in the five major apple producing districts including Quetta, Killah Saifullah, Killah Abdullah, Pishin and Kalat. In the inception phase of the project, populations of the various value chain actors / components including farmers, middlemen, wholesalers, retailers  and cold storage facilities were estimated with the support of Balochistan Agriculture Department and a proportional sample was drawn for a baseline survey. The following visualization shows the geographical spread of the various value chain actors reached in PAFAID’s initial survey.
       </p>
     </div>
-    <div class="headingContain">
+    <div data-aos="fade" data-aos-duration="750" data-aos-delay="150" class="headingContain">
       <h3>Geographical distribution of Apple Value Chain Actors</h3>
       <h4>Source: PAFAID Survey</h4>
     </div>
-    <div class="mapBoxContain">
+    <div data-aos="fade" data-aos-duration="750" data-aos-delay="150" class="mapBoxContain">
       <div class="controls">
         <div class="selectCategory filterContain">
           <label class = "filterLabel" for="selectCategory">Choose a Value Chain Actor</label>
@@ -292,8 +121,8 @@
         Anecdotal evidence suggests that women and youth are actively involved in the apple value chain. However, very often, they remain economically excluded or do not earn the same wage as their male colleagues. The Global Wage Report 2018/2019 of ILO found that women constitute 90% of the bottom 1% of wage earners in Pakistan. The report also highlights the wage and gender wage gap situation in Pakistan. According to the report, Pakistan has the second highest overall average hourly gender pay gap of the 73 countries for which comparable data are available. In particular, the gender pay gap for Pakistan was identified to be <span class="dataText">34%</span>, which is more than double the global average.
       </p>
     </div>
-    <div class="gGapContain">
-      <svg class ="genderGap" width = "600px" viewBox = "0 0 600 420"></svg>
+    <div class="gGapContain" data-aos="fade" data-aos-duration="750" data-aos-delay="150">
+      <svg class ="genderGap" width = "600px" preserveAspectRatio="xMinYMin meet" viewBox = "0 0 600 420"></svg>
     </div>
     <div class="descriptContain">
       <p>
@@ -311,16 +140,16 @@
         <option value="Other">Other</option>
       </select>
     </div>
-    <div class="appTypeContain">
-      <svg class ="appTypeSVG" width = "650px" viewBox = "0 0 500 500"></svg>
+    <div class="appTypeContain" data-aos="fade" data-aos-duration="750" data-aos-delay="150">
+      <svg class ="appTypeSVG" width = "650px" preserveAspectRatio="xMinYMin meet" viewBox = "0 0 500 500"></svg>
     </div>
     <div class="descriptContain">
       <p>
         Apple farmers are also threatened by climate change, the biggest challenge of our time. According to a report by UNDP and BUITEMS (2015), many regions of the province are experiencing drought since 2013 due to lower precipitations rates (which is one fourth of the usual rainfall i.e. 200-250 mm), due to mass installation of tube wells, extensive pumping of groundwater, and poor groundwater governance resulting in large scale pumping of groundwater have led to a steep decline in water tables particularly in the upland Balochistan that include all the apple production area. Climate change causes extreme weather events like flood or intense drought across districts in Balochistan. The districts impacted by drought and targeted by the PAFAID project have been labeled and highlighted.
       </p>
     </div>
-    <div class="droughtContain">
-      <svg class ="droughtSVG" width = "650px" viewBox = "0 0 700 650"></svg>
+    <div class="droughtContain" data-aos="fade" data-aos-duration="750" data-aos-delay="150">
+      <svg class ="droughtSVG" width = "650px" preserveAspectRatio="xMinYMin meet" viewBox = "0 0 700 650"></svg>
     </div>
     <div class="descriptContain">
       <p>
@@ -331,22 +160,54 @@
         Various value chain actors, particularly farmers also lack the required technologies and technical know-how on adequate on-farm practices to maximize their own revenue and improve their own livelihood. Lack of resources and training often results in additional losses in the post harvest phase. As it was observed during the PAFAID surveys with farmers, only a small fraction of the respondents, in average <span class="dataText">5.1%</span> of farmers, has received a training on the application of improved production practices.
       </p>
     </div>
-    <div class="lossHistContain">
-      <svg class ="lossHist" width = "720px" viewBox = "0 0 700 700"></svg>
+    <div class="lossHistContain" data-aos="fade" data-aos-duration="750" data-aos-delay="150">
+      <svg class ="lossHist" width = "720px" preserveAspectRatio="xMinYMin meet" viewBox = "0 0 700 700"></svg>
     </div>
     <div class="descriptContain">
       <p>
         At this stage, apples from Balochistan are mostly sold in national markets with less than 1% apples being marketed abroad. In the local markets, commission agents  are playing an important role to move products to larger Pakistani cities. Data from PAFAID’s initial survey also shows the location of the commission agents to whom the apples from the five selected districts and other apple producing districts are sold.
       </p>
     </div>
-    <div class="appleFlowContain">
-      <svg class ="appleFlow" width = "800px" viewBox = "0 0 600 600"></svg>
+    <div class="appleFlowContain" data-aos="fade" data-aos-duration="750" data-aos-delay="150">
+      <svg class ="appleFlow" width = "800px" preserveAspectRatio="xMinYMin meet" viewBox = "0 0 600 600"></svg>
     </div>
+
+    <footer class="footer">
+      <p class="share_heading">Share this article</p>
+      <div class="social_buttons">
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="fb-share-button"
+          data-href="https://datastories.pafaid.org/apple-data/index.html"
+          data-layout="button_count">
+        </div>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+        <script type="IN/Share" data-url="https://datastories.pafaid.org/apple-data/index.html"></script>
+      </div>
+
+      <div class="footer_content">
+        <img class="pafaid_logo_footer" src="img/logo PAFAID.svg" alt="">
+        <img class="unido_logo_footer" src="img/unido.svg" alt="">
+        <img class="baloch_logo_footer" src="img/Baloch_gov.png" alt="">
+      </div>
+    </footer>
 
 
 
 
   </div>
+
+  <script>
+    AOS.init();
+  </script>
 
 
   <script src="JS/appleProd.js"></script>

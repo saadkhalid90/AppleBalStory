@@ -237,7 +237,7 @@ function drawAppFlow(){
 
             // append a basic tooltip title
             if (over){
-              d3.select('div.appleFlowContain').append('div')
+              d3.select('body').append('div')
                               .classed('tooltip', true)
                               .html(
                                 d =>
@@ -260,7 +260,7 @@ function drawAppFlow(){
                               })
             }
             else {
-              d3.select('div.appleFlowContain').select('div.tooltip').remove();
+              d3.select('body').select('div.tooltip').remove();
             }
 
             // make the flowLine more opaque for hovered city
