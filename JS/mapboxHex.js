@@ -2,24 +2,33 @@
 function drawMBoxHexMap(){
     // setting up the mapbox gl map
     // first we specify the token
+
     mapboxgl.accessToken = 'pk.eyJ1IjoiZW5qYWxvdCIsImEiOiJjaWhtdmxhNTIwb25zdHBsejk0NGdhODJhIn0.2-F2hS_oTZenAWc0BMf_uw'
 
     //Setup mapbox-gl map
     const map = new mapboxgl.Map({
       container: 'mapBox', // container id
-      style: 'mapbox://styles/mapbox/dark-v10', // default style picked from mapbox gljs docs
+      style: 'mapbox://styles/mapbox/dark-v10?optimize=true', // default style picked from mapbox gljs docs
       center: [67.2354, 30.1156], // picked a center coordinate for Pishin (Balochistan)
       zoom: 7.5,
 
     })
+
+    var t1 = performance.now()
+    console.log("Call to function took " + (t1 - t0) + " milliseconds.")
+
     map.scrollZoom.disable() // disable zoom on pinch
     map.addControl(new mapboxgl.NavigationControl()); // add navigation controls like zoom etc
+
 
     // Setup our svg layer that we can manipulate with d3
     // getting the container which contains the mapbox map
     const container = map.getCanvasContainer();
     // appending an svg to that container
     const svg = d3.select(container).append("svg").classed('mapBoxSVG', true);
+
+
+    var t0 = performance.now();
 
     // we calculate the scale given mapbox state (derived from viewport-mercator-project's code)
     // to define a d3 projection
@@ -106,6 +115,7 @@ function drawMBoxHexMap(){
 
         const hexgrid = hex(data, ['District', 'AppleTypes', 'FarmSize']);
 
+
         const projection = getD3();
 
         hexgrid.grid.layout.forEach((d, i) => {
@@ -124,7 +134,9 @@ function drawMBoxHexMap(){
           .attr('class', `vcBubble All ${className}`)
           .attr('cx', d => d.x)
           .attr('cy', d => d.y)
-          .attr('r', 1)
+          .attr('r', d => {
+            return sqrtScaleFactor * Math.sqrt(d.datapoints);
+          })
           .attr('radVal', d => {
             return sqrtScaleFactor * Math.sqrt(d.datapoints);
           })
@@ -132,13 +144,8 @@ function drawMBoxHexMap(){
           .style('fill-opacity', 0.6)
           // .style('stroke', '#212121')
           .style('stroke-width', '1px')
-          .style('stroke-opacity', 0.5)
-          .transition()
-          .delay(2000)
-          .duration(1000)
-          .attr('r', d => {
-            return sqrtScaleFactor * Math.sqrt(d.datapoints);
-          })
+          .style('stroke-opacity', 0.5);
+
       }
 
       appendBubbles(farmerData, "Farmer", 2, 'yellow', hex, 6);
