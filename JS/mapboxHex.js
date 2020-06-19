@@ -124,7 +124,9 @@ function drawMBoxHexMap(){
           .attr('class', `vcBubble All ${className}`)
           .attr('cx', d => d.x)
           .attr('cy', d => d.y)
-          .attr('r', 1)
+          .attr('r', d => {
+            return sqrtScaleFactor * Math.sqrt(d.datapoints);
+          })
           .attr('radVal', d => {
             return sqrtScaleFactor * Math.sqrt(d.datapoints);
           })
@@ -133,12 +135,7 @@ function drawMBoxHexMap(){
           // .style('stroke', '#212121')
           .style('stroke-width', '1px')
           .style('stroke-opacity', 0.5)
-          .transition()
-          .delay(2000)
-          .duration(1000)
-          .attr('r', d => {
-            return sqrtScaleFactor * Math.sqrt(d.datapoints);
-          })
+
       }
 
       appendBubbles(farmerData, "Farmer", 2, 'yellow', hex, 6);

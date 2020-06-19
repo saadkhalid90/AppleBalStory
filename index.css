@@ -261,6 +261,29 @@ svg.mapBoxSVG {
   height: 100vh;
 }
 
+svg.barsTrain {
+  font-family: 'Roboto', sans-serif;
+}
+svg.barsTrain g.axis.y path, line{
+  stroke: none;
+}
+
+svg.barsTrain g.axis.x line{
+  stroke: none;
+}
+
+svg.barsTrain g.axis.x path{
+  stroke: grey;
+}
+
+svg.barsTrain g.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+svg.barsTrain g.grid path {
+  stroke: none;
+}
 
 .footer {
   padding: 40px;
@@ -272,8 +295,8 @@ svg.mapBoxSVG {
   align-items: center;
 }
 
-.pafaid_logo_footer {
-  width: 210px;
+.jica_logo_footer {
+  width: 110px;
 }
 
 .unido_logo_footer {
@@ -285,8 +308,8 @@ svg.mapBoxSVG {
 }
 
 .footer_content {
-  margin-right: 100px;
-  width: calc(100% - 100px);
+  margin-right: 0px;
+  width: calc(100% - 0px);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -330,8 +353,8 @@ svg.mapBoxSVG {
     margin-right: 40px;
     width: calc(100% - 40px);
   }
-  .pafaid_logo_footer {
-    width: 120px;
+  .jica_logo_footer {
+    width: 80px;
   }
 
   .unido_logo_footer {
